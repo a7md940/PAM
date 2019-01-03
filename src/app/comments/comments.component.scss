@@ -1,3 +1,13 @@
+// start Utilites.
+
+// alert for validation
+.warning{
+  border: 1px solid red !important;
+}
+
+// end Utilites.
+
+
 #comments{
   
     .comment__header{
@@ -26,6 +36,7 @@
         }
         .comment-content{
           border-bottom: 1px solid #ccc;
+          width: 100%;
           
           p{
             font-size: .9rem;

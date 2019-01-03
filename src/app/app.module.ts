@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NewsServiceService } from './services/news-service.service';
 import { NewDetailsComponent } from './new-details/new-details.component';
 import { CommentsComponent } from './comments/comments.component';
+import { SpinnerComponent } from './spinner/spinner.component';
 
 
 @NgModule({
@@ -25,13 +26,15 @@ import { CommentsComponent } from './comments/comments.component';
     NewsItemComponent,
     FooterComponent,
     NewDetailsComponent,
-    CommentsComponent
+    CommentsComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [NewsServiceService],
   bootstrap: [AppComponent]

@@ -10,7 +10,7 @@
     </div>
 
     <div class="comments__container ">
-      <div class="comment--item d-flex position-relative " *ngFor="let comment of comments">
+      <div class="comment--item d-flex position-relative" *ngFor="let comment of comments">
         <div class="user-image my-4"></div>
         <div class="comment-content py-4">
           <strong>{{comment.creator}}</strong>
@@ -40,8 +40,18 @@
         </div>
       </div>
       <div class="comment__form--right">
-        <form class="comment-form" (submit)='addComment()'>
-          <textarea name="comment" [(ngModel)]='commentForm' class="comment-input" (keyup.enter)='addComment()'></textarea>
+        <div class="alert alert-danger" *ngIf="commentInput.hasError('maxlength')">
+          <span> sorry comment max length is 100 chars.</span>
+        </div>
+        <div class="alert alert-danger" *ngIf="commentInput.hasError('required') && commentInput.touched">
+          <span> comment required to submit.</span>
+        </div>
+        <form class="comment-form" [formGroup]="commentsForm" (submit)='addComment()'>
+          <textarea name="comment" formControlName='commentInput' [ngClass]="{
+            'warning': !commentInput.valid && commentInput.touched,
+            'comment-input': true
+          }"
+            (keyup.enter)='addComment()'></textarea>
           <input type="submit" value='Submit' class="px-3 btn btn-dark">
         </form>
       </div>

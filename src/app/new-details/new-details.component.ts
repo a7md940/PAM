@@ -8,7 +8,6 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./new-details.component.scss']
 })
 export class NewDetailsComponent implements OnInit {
-
   new;
 
   constructor(

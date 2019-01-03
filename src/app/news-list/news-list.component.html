@@ -8,6 +8,12 @@
 
     <!-- Start News List -->
     <div id="content__news-list" class="py-4 p-md-4  d-flex flex-wrap">
+      <p *ngIf="apiError" class="text-center w-100" style="color: red;">
+        {{apiError}}
+      </p>
+      <div class="col-12" *ngIf="isLoading">
+        <app-spinner></app-spinner>
+      </div>
       <div class="news--container col-6 col-md-4 col-lg-3" *ngFor="let new of news">
         <app-news-item [itemBackground]='new.urlToImage' [itemTitle]='new.title' [itemCreatedAt]='new.publishedAt'
           [routerLink]="new.title"></app-news-item>
