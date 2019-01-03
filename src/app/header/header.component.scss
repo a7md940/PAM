@@ -2,6 +2,11 @@
 
   // Start Content__header
   #content__header{
+
+    // margin top for header to save navbar position at small screens as it fixed.
+    @include mobile(){
+      padding-top: 51px !important;
+    }
     box-shadow: 0px 15px 20px -5px rgba(0,0,0,.08);
     ul{
       

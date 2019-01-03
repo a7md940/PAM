@@ -6,7 +6,7 @@
     .collapse:not(.show) {
       display: block;
       left: -100%;
-      position: absolute;
+      position: fixed;
       width: 50%;
       height:100vh;
     }
@@ -53,6 +53,14 @@
     }
   }
   nav{
+    // make navbar fixed at small screnns.
+    @include mobile() {
+      position: fixed;
+      z-index: 9999;
+      background: white;
+      width: 100%;
+    }
+
     #my-profile__navbar{
         .navbar-nav {
       
