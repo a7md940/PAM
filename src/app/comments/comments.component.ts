@@ -10,10 +10,10 @@ import * as moment from 'moment';
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent implements OnInit {
-  // news Title from ActivatedRoute.
+  // news item Title from ActivatedRoute.
   newsTitle = this.route.snapshot.params.title;
 
-  // Arrat of current news comments.
+  // Array of current news item comments.
   comments: [];
 
   // Comments Form.
@@ -54,12 +54,13 @@ export class CommentsComponent implements OnInit {
       // get comments from localStorage and if isn't exist will be empty object.
       const comments = JSON.parse(localStorage.getItem('comments')) || {};
 
-      // if comments exist in localStorage and comments of the current news.
+      // if comments Object in localStorage and comments of the current news item are exist.
       if (comments != null && comments[this.newsTitle]) {
-        // add the new comment to current news comments Arrat.
+        // add the new comment to current news item comments Array.
         comments[this.newsTitle] = [...comments[this.newsTitle], ...data[this.newsTitle]];
-      } else {
-        // if there's no current news array => create it by adding the new comment.
+      }
+      // if there's no current news array => create it and add the news item comments.
+      else {
         comments[this.newsTitle] = [...data[this.newsTitle]];
       }
       // add the comments to localStorage after mainuplations.

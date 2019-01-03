@@ -1,13 +1,13 @@
 @import '../global-styles/mixins.scss';
 
 // Start Bootstrap Overriding.
-  @include mobile(){
+  @include mobile(){ // max width: 880px
     
     .collapse:not(.show) {
       display: block;
       left: -100%;
       position: fixed;
-      width: 50%;
+      width: 65%;
       height:100vh;
     }
 
@@ -24,11 +24,11 @@
       }
     }
   }
-
   // End Bootstrap Overriding.
   
   // Navbar Component
-  // Toggle navbar at small screens.
+
+  // Start Toggle navbar at small screens.
   @include mobile(){
     #c__navbar-toggler:checked + #my-profile__navbar{
       top: 3rem;
@@ -52,6 +52,9 @@
       }
     }
   }
+  // End Toggle navbar at small screens.
+
+
   nav{
     // make navbar fixed at small screnns.
     @include mobile() {

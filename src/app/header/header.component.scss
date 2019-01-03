@@ -3,7 +3,7 @@
   // Start Content__header
   #content__header{
 
-    // margin top for header to save navbar position at small screens as it fixed.
+    // padding top for header to save navbar position at small screens as it fixed.
     @include mobile(){
       padding-top: 51px !important;
     }
