@@ -1,0 +1,18 @@
+@import './app/global-styles/mixins.scss';
+@import './app/global-styles/mixins.scss';
+
+@include mobile() {
+    .container{
+        max-width: unset !important;
+    }
+    @media (min-width: 768px){
+        .container {
+            max-width: unset;
+        }
+    }
+    @media (min-width: 576px){
+        .container {
+            max-width: unset;
+        }
+    }
+}

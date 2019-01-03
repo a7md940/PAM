@@ -5,11 +5,6 @@
     box-sizing: border-box;
 }
 
-    
-  
-
-  
-  
   // Start My-profile_Content Component
   
   // Start Content_News
@@ -96,6 +91,11 @@
       // decrease image height at small screens.
       @include mobile(){
         height: 50px; 
+      }
+
+      // decrease image height at 320px width screen devices.
+      @media (max-width: 320px){
+        height: 30px;
       }
     }
   }

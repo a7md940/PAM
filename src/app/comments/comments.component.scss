@@ -1,8 +1,18 @@
+@import '../global-styles/mixins.scss';
+
 // start Utilites.
 
 // alert for validation
 .warning{
   border: 1px solid red !important;
+}
+
+// disabled submit button
+.disabled-btn{
+  background: grey !important;
+  color: #fff !important;
+  cursor: not-allowed !important;
+  border: rgb(104, 104, 104) !important;
 }
 
 // end Utilites.
@@ -38,16 +48,26 @@
           border-bottom: 1px solid #ccc;
           width: 100%;
           
+          .user__name{
+            // decrease font size at small screens.
+            @include mobile(){
+              font-size: 1rem;
+            }
+          }
+
           p{
-            font-size: .9rem;
-            color: #777;
+            // decrease font size at small screens.
+            @include mobile(){
+              font-size: 1rem;
+            }
+            color: #191919;
             text-overflow: ellipsis; 
             max-height: 100px;
             overflow: hidden;
           }
           .replay{
             cursor: pointer;
-            
+            font-size: .9rem;
             span{
               margin-left: .5rem;
               text-transform: capitalize;
@@ -57,6 +77,7 @@
         .comment-date{
           right: 1rem;
           top: 1rem;
+          font-size: .8rem;
         }
       }
     }

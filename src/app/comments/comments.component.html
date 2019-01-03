@@ -1,61 +1,60 @@
-<div class="col-12">
-  <div id="comments" class="col-12 px-0">
+<div id="comments" class="col-12 px-0">
 
-    <div class="comment__header d-flex justify-content-between ">
-      <span> {{comments?.length || 0}} Comments</span>
-      <div class="share-icon">
-        <i class="fa fa-share-square-o" aria-hidden="true"></i>
-        <span>Share</span>
-      </div>
+  <div class="comment__header d-flex justify-content-between ">
+    <span> {{comments?.length || 0}} Comments</span>
+    <div class="share-icon">
+      <i class="fa fa-share-square-o mr-1" aria-hidden="true"></i>
+      <span>Share</span>
     </div>
-
-    <div class="comments__container ">
-      <div class="comment--item d-flex position-relative" *ngFor="let comment of comments">
-        <div class="user-image my-4"></div>
-        <div class="comment-content py-4">
-          <strong>{{comment.creator}}</strong>
-          <p>
-            {{comment.content}}
-          </p>
-          <span>read more..</span>
-
-          <div class="replay">
-            <i class="fa fa-reply" aria-hidden="true"></i>
-            <span>replay</span>
-          </div>
-        </div>
-        <div class="comment-date position-absolute">
-          {{comment.date}}
-        </div>
-      </div>
-    </div>
-
-    <div class="comment__form d-flex my-3">
-      <div class="comment__form--left">
-        <h5>Leave a replay</h5>
-        <a class="d-block my-3">Quick signup</a>
-        <div class="social-icons">
-          <i class="fa fa-facebook-official" aria-hidden="true"></i>
-          <i class="fa fa-twitter" aria-hidden="true"></i>
-        </div>
-      </div>
-      <div class="comment__form--right">
-        <div class="alert alert-danger" *ngIf="commentInput.hasError('maxlength')">
-          <span> sorry comment max length is 100 chars.</span>
-        </div>
-        <div class="alert alert-danger" *ngIf="commentInput.hasError('required') && commentInput.touched">
-          <span> comment required to submit.</span>
-        </div>
-        <form class="comment-form" [formGroup]="commentsForm" (submit)='addComment()'>
-          <textarea name="comment" formControlName='commentInput' [ngClass]="{
-            'warning': !commentInput.valid && commentInput.touched,
-            'comment-input': true
-          }"
-            (keyup.enter)='addComment()'></textarea>
-          <input type="submit" value='Submit' class="px-3 btn btn-dark">
-        </form>
-      </div>
-    </div>
-
   </div>
+
+  <div class="comments__container ">
+    <div class="comment--item d-flex position-relative" *ngFor="let comment of comments">
+      <div class="user-image my-4"></div>
+      <div class="comment-content py-4">
+        <strong class="user__name">{{comment.creator}}</strong>
+        <p>
+          {{comment.content}}
+        </p>
+
+        <div class="replay">
+          <i class="fa fa-reply" aria-hidden="true"></i>
+          <span>replay</span>
+        </div>
+      </div>
+      <div class="comment-date position-absolute">
+        {{comment.date}}
+      </div>
+    </div>
+  </div>
+
+  <div class="comment__form d-flex my-3">
+    <div class="comment__form--left">
+      <h5>Leave a replay</h5>
+      <a class="d-block my-3">Quick signup</a>
+      <div class="social-icons">
+        <i class="fa fa-facebook-official" aria-hidden="true"></i>
+        <i class="fa fa-twitter" aria-hidden="true"></i>
+      </div>
+    </div>
+    <div class="comment__form--right">
+      <div class="alert alert-danger" *ngIf="commentInput.hasError('maxlength')">
+        <span> sorry comment max length is 100 chars.</span>
+      </div>
+      <div class="alert alert-danger" *ngIf="commentInput.hasError('required') && commentInput.touched">
+        <span> comment required to submit.</span>
+      </div>
+      <form class="comment-form" [formGroup]="commentsForm" (submit)='addComment()'>
+        <textarea name="comment" formControlName='commentInput' [ngClass]="{
+              'warning': !commentInput.valid && commentInput.touched,
+              'comment-input': true
+            }"
+          (keyup.enter)='addComment()'></textarea>
+        <input type="submit" value='Submit' class="px-3 btn btn-dark" [ngClass]="{
+              'disabled-btn': !commentsForm.valid
+            }">
+      </form>
+    </div>
+  </div>
+
 </div>

@@ -1,4 +1,57 @@
+@import '../global-styles/mixins.scss';
+
+// Start Bootstrap Overriding.
+  @include mobile(){
+    
+    .collapse:not(.show) {
+      display: block;
+      left: -100%;
+      position: absolute;
+      width: 50%;
+      height:100vh;
+    }
+
+    // bootstrap toggler btn.
+    .navbar-toggler{
+      border: none;
+      cursor: unset !important;
+      outline: none;
+      
+      &:focus,&:active{outline:none;}
+
+      .navbar-toggler-icon{
+        cursor: pointer;
+      }
+    }
+  }
+
+  // End Bootstrap Overriding.
+  
   // Navbar Component
+  // Toggle navbar at small screens.
+  @include mobile(){
+    #c__navbar-toggler:checked + #my-profile__navbar{
+      top: 3rem;
+      left: 0% !important;
+      font-size: 2rem;
+      font-weight: lighter;
+      z-index: 9999;
+      background: white;
+
+    }
+
+    #my-profile__navbar { 
+      ul{  
+        li{
+          padding: .5rem 2rem;
+        }
+      }
+
+      button{
+        padding: .5rem 2rem;
+      }
+    }
+  }
   nav{
     #my-profile__navbar{
         .navbar-nav {

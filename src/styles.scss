@@ -1,9 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
 
+// Import Montessrat forn from googlefonts api.
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+
+// Import Bootstrap Overriding
+@import './bootstrap-overriding.scss';
+
+// change all elements font familt.
+body *:not(.fa) {
+  font-family: 'Montserrat', sans-serif;
+}
+
 // change font-size for :root at small screens
 // font size at small screen
 @media (max-width: 990px){
     :root{
-      font-size: 12px;
+      font-size: 13px;
     }
-  }
+}
+
