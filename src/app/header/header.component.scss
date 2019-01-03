@@ -2,6 +2,12 @@
 
   // Start Content__header
   #content__header{
+    font-size: 16px;
+
+    // set font-size tp 14px at small screen.
+    @include mobile(){
+      font-size: 15px;
+    }
 
     // padding top for header to save navbar position at small screens as it fixed.
     @include mobile(){
@@ -11,7 +17,7 @@
     ul{
       
       li.content__header--item{
-        padding: 0rem 1rem;
+        padding: 0em 1em;
         justify-content: flex-end;
         color: #999;
         text-align: right;
@@ -35,7 +41,7 @@
         
         i{
           cursor: pointer;
-          margin-left: .3rem;
+          margin-left: .3em;
         }
       }
       
@@ -51,7 +57,7 @@
     }
     
     .item--desc{
-      font-size: .9rem;
+      font-size: .9em;
       color: #777 !important;
     }
   }
