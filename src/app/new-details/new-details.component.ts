@@ -9,6 +9,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class NewDetailsComponent implements OnInit {
   new;
+  errMsg;
 
   constructor(
     private newsService: NewsServiceService,
@@ -22,6 +23,10 @@ export class NewDetailsComponent implements OnInit {
     // fetch only one item by its title from localStorage.
     this.new = (JSON.parse(localStorage.getItem('news')) as Array<any>)
       .find(item => item.title === this.route.snapshot.params.title);
+
+    if (!this.new) {
+      this.errMsg = 'Sorry this news item has expired.'
+    }
   }
 
 }
