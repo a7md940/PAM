@@ -1,0 +1,51 @@
+@import '../global-styles/mixins.scss';
+
+#new__details{
+    border-bottom: 1px solid #ccc;
+    .new__details--header{
+      position: relative;
+      
+      .header__title{
+        
+      }
+      .header__details{
+        color: #999;
+        font-size: .8rem;
+        
+        i{
+          margin-right: 1rem;
+        }
+      }
+      .header__bookmark{
+        background: #2b2b2b;
+        position: absolute;
+        cursor:pointer;
+        right: 1rem;
+        @include mobile(){
+          right: -1rem;
+          top: 0rem;
+        }
+        top: 1rem;
+        width:30px;
+        height: 30px;
+        text-align:center;
+        line-height: 30px;
+        color: white;
+        border-radius: 5px;
+      }
+    }
+    
+    .new__details--image{
+      width: 100%;
+      height: 350px;
+      background-size: cover;
+      background-position-y: 20%;
+      border-radius: 10px;
+
+      // change background position at small screens.
+      @include mobile(){
+        background-position-x: center;
+      }
+    }
+  }
+  

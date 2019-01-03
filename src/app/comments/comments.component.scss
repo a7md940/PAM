@@ -1,0 +1,90 @@
+#comments{
+  
+    .comment__header{
+      width: 90%;
+      font-weight: bold;
+      margin: 1rem 0rem;
+      
+      .share-icon {
+       cursor: pointer;
+        span{
+          font-weight: normal;
+        } 
+      }
+    }
+    
+    .comments__container{
+      border-top: 1px solid #ccc;
+      width: 90%;
+      .comment--item{
+        .user-image{
+          min-width: 50px;
+          max-height: 50px;
+          background: #ccc;
+          margin-right: 3rem;
+          border-radius: 8px;
+        }
+        .comment-content{
+          border-bottom: 1px solid #ccc;
+          
+          p{
+            font-size: .9rem;
+            color: #777;
+            text-overflow: ellipsis; 
+            max-height: 100px;
+            overflow: hidden;
+          }
+          .replay{
+            cursor: pointer;
+            
+            span{
+              margin-left: .5rem;
+              text-transform: capitalize;
+            } 
+          }
+        }
+        .comment-date{
+          right: 1rem;
+          top: 1rem;
+        }
+      }
+    }
+    
+    .comment__form{
+      width: 90%;
+      
+      .comment__form--left{
+        margin-right: 3rem;
+        a{
+          color: #999999;
+        }
+        i{
+          font-size: 2rem;
+          margin-right: .5rem
+        }
+        .social-icons{
+          .fa.fa-facebook-official{
+            color: #3c5a9a;
+          }
+          .fa.fa-twitter{
+            color: #41c8f7;
+          }
+        }
+      }
+      
+      .comment__form--right{
+        flex: 1;
+        form{
+          width: 100%;
+          .comment-input{
+            width: 100%;
+            background: #f2f2f2;
+            border:none;
+            height: 150px;
+            outline: none;
+            padding: 1rem;
+          }
+        }
+      }
+    }
+  }

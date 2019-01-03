@@ -1,0 +1,106 @@
+<app-navbar></app-navbar>
+<app-header></app-header>
+<!-- Start My-Profiel__Content Component -->
+<div class="container-fluid">
+  <div class="row">
+
+
+
+    <!-- Start News List -->
+    <div id="content__news-list" class="py-4 p-md-4  d-flex flex-wrap">
+      <div class="news--container col-6 col-md-4 col-lg-3" *ngFor="let new of news">
+        <app-news-item [itemBackground]='new.urlToImage' [itemTitle]='new.title' [itemCreatedAt]='new.publishedAt'
+          [routerLink]="new.title"></app-news-item>
+      </div>
+    </div>
+    <!-- End News List -->
+
+  </div>
+</div>
+<!-- End My-Profiel__content Component -->
+
+<!-- Start My_Profiel--Footer  -->
+<div class="container-fluid px-0">
+  <div id="my-profile__footer">
+    <div class="row mx-0">
+
+      <div class="col-12 col-md-12 col-lg-6 d-flex">
+        <div class="more-news footer--item">
+          <div class="footer--title d-flex justify-content-between">
+            <span class="d-block">more news</span>
+            <i class="fa fa-wrench" aria-hidden="true"></i>
+
+          </div>
+          <ul class="list-unstyled my-profiles__footer--list">
+            <li class="my-profiles__footer--list-item">
+              <a href="">Lorem ipsum dolor sit amet.</a>
+            </li>
+            <li class="my-profiles__footer--list-item">
+              <a href="">Lorem ipsum dolor sit.</a>
+            </li>
+            <li class="my-profiles__footer--list-item">
+              <a href="">Lorem ipsum dolor, sit amet consectetur adipisicing.</a>
+            </li>
+          </ul>
+        </div>
+        <div class="top-news footer--item">
+          <div class="footer--title d-flex justify-content-between">
+            <span class="d-block">top news</span>
+            <i class="fa fa-wrench" aria-hidden="true"></i>
+
+          </div>
+          <ul class="list-unstyled my-profiles__footer--list">
+            <li class="my-profiles__footer--list-item">
+              <a href="">Lorem ipsum dolor sit amet.</a>
+            </li>
+            <li class="my-profiles__footer--list-item">
+              <a href="">Lorem ipsum dolor sit.</a>
+            </li>
+            <li class="my-profiles__footer--list-item">
+              <a href="">Lorem ipsum dolor, sit amet consectetur adipisicing.</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-12 col-lg-6 d-flex">
+        <div class="tv-show-this-week footer--item">
+          <div class="footer--title d-flex justify-content-between">
+            <span class="d-block">tv shop tis week</span>
+            <i class="fa fa-wrench" aria-hidden="true"></i>
+
+          </div>
+          <ul class="list-unstyled my-profiles__footer--list">
+            <li class="my-profiles__footer--list-item">
+              <a href="">Lorem ipsum dolor sit amet.</a>
+            </li>
+            <li class="my-profiles__footer--list-item">
+              <a href="">Lorem ipsum dolor sit.</a>
+            </li>
+            <li class="my-profiles__footer--list-item">
+              <a href="">Lorem ipsum dolor, sit amet consectetur adipisicing.</a>
+            </li>
+          </ul>
+        </div>
+        <div class="top-images footer--item">
+          <div class="footer--title d-flex justify-content-between">
+            <span class="d-block">top images</span>
+          </div>
+
+          <div class="top-images--imgs__container" *ngIf="news">
+            <div class="img--item" *ngFor="let new of topNews" [ngStyle]="{
+                'background-image': 'url('+ new.urlToImage +')'
+              }"
+              [routerLink]='new.title'></div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+<!-- End My_Profiel--Footer  -->
+
+<app-footer></app-footer>

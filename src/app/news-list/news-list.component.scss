@@ -1,0 +1,129 @@
+// import media query mixin
+@import '../global-styles/mixins.scss';
+
+*{
+    box-sizing: border-box;
+}
+
+    
+  
+
+  
+  
+  // Start My-profile_Content Component
+  
+  // Start Content_News
+  #content__news-list{
+    width: 100%;
+    border-bottom: 1px solid #aaa;
+    .news--container{
+        @include mobile(){
+            padding: 0rem .5rem;        
+        }
+    }
+  }
+  // End Content__news
+  
+  // End My-profile_Content Component
+  
+  // Start My-profile__footer
+  #my-profile__footer{
+    margin: 0rem 0rem;
+    padding: 2rem 1rem;
+  }
+  // Start utilities
+  .footer--item{
+    width: 50%;
+    margin: 0rem 1rem;
+  }
+  .footer--title{
+    padding: 1rem 0rem;
+    border-bottom: 1px dashed #aaa;
+    
+    span, i{
+      cursor:pointer;
+    }
+    span{
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+  }
+  // End utilities
+  
+  .my-profiles__footer--list{
+    
+    .my-profiles__footer--list-item{
+      padding: .8rem 0rem;
+      display:flex;
+      align-items:center;
+      
+      &:not(:last-child){
+        border-bottom: 1px solid #e2e2e2;
+      }
+      
+      a{
+        color: #2f2f2f;
+        transition: .1s all;
+        &:hover{ 
+          font-weight: bold;
+          text-decoration: none;
+        }
+      }
+      
+      &::before{
+        content:'\f19c';
+        font-size: .7rem;
+        font-family: 'Fontawesome';
+        color: #9a9a9a !important;
+        margin-right: .8rem;
+      }
+    }
+  }
+  
+  .top-images--imgs__container{
+    display:flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    
+    .img--item{
+      margin: .3rem .1rem;
+      width: 30%;
+      height: 80px;
+      background-size: cover;
+      background-position: center center;
+      cursor: pointer;
+
+      // decrease image height at small screens.
+      @include mobile(){
+        height: 50px; 
+      }
+    }
+  }
+  
+  // divide footer items with border.
+  #my-profile__footer{
+    // footer columns
+    & > div > div{
+      padding: 1rem 0rem;
+    }
+    
+    // first footer column.
+    & > div > div:first-child{
+      
+      // at small screen 
+      @media (max-width: 990px){
+        border-bottom: 1px solid #ccc;
+      }
+      
+      // at large screens
+      @media (min-width: 990px){
+        border-right: 1px solid #ccc;
+        
+      }
+      
+    }
+  }
+  // divide footer items with border.
+  
+  // End My-profile__footer
+  

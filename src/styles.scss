@@ -1,1 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
+
+// change font-size for :root at small screens
+// font size at small screen
+@media (max-width: 990px){
+    :root{
+      font-size: 12px;
+    }
+  }
