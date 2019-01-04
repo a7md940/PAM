@@ -6,7 +6,9 @@
       position: relative;
       
       .header__title{
-        
+        h1{
+          width: 95%;
+        }
       }
       .header__details{
         color: #999;
@@ -25,7 +27,7 @@
           right: -1rem;
           top: 0rem;
         }
-        top: 4rem;
+        top: 0rem;
         width:30px;
         height: 30px;
         text-align:center;
